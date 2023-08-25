@@ -1,8 +1,10 @@
-import { getTrendingMovies } from "@/utils/apiRequest";
+import { getTrendingMovies, getFavouriteMovies } from "@/utils/apiRequest";
 import Card from "./components/Card";
 
 export default async function Home() {
   const movies = await getTrendingMovies();
+  const fav = await getFavouriteMovies();
+  console.log(movies);
   return (
 
     <div className=''>

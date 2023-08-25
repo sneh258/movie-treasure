@@ -5,8 +5,6 @@ import Card from "./Card";
 
 function SearchResults({ searchText, movies }) {
   const [filteredMovies, setFilteredMovies] = useState(movies);
-  console.log(searchText)
-
   useEffect(() => {
     setFilteredMovies(movies);
   }, [movies]);

@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import { getMovieDetails, getSimilarMovies } from './../../../utils/apiRequest'
+import { getMovieDetails, getSimilarMovies } from './../../../utils/apiRequest';
+import Card from "@/app/components/Card";
 
 async function MovieDetailsPage({ params }) {
     const IMAGE_BASE_URL = "https://www.themoviedb.org/t/p/w220_and_h330_face";
     const movieDetails = await getMovieDetails(params.id);
     const similarMovies = await getSimilarMovies(params.id);
-    console.log(movieDetails);
+    // console.log(movieDetails);
 
     return (
         <div className="my-4 mx-3">
@@ -21,29 +22,24 @@ async function MovieDetailsPage({ params }) {
                         <p className="py-1 px-2 bg-warning text-white me-2 rounded">{movieDetails.status}</p>
                     </div>
                     <div>
-                        {/* <p>{movieDetails.genres.map(genre => {
+                        <p>{movieDetails.genres.map(genre => {
                             return <span className="mx-1 p-1 bg-dark text-white me-2 rounded" key={genre.id}>{genre.name}</span>
-                        })}</p> */}
+                        })}</p>
                     </div>
                     <p>{movieDetails.overview}</p>
                 </div>
             </div>
-            {/* Similar Movies
+            Similar Movies
             <div className="my-3">
                 <h2>Similar Movies</h2>
                 <div className="d-flex flex-wrap gap-3">
                     {similarMovies.map(movie => {
                         return (
-                            <div key={movie.id}>
-                                <img src={IMAGE_BASE_URL + movie.poster_path} alt="" />
-                                <div className="card-body">
-                                    <h5 className="card-title">{movie.title}</h5>
-                                </div>
-                            </div>
+                            <Card key={movie.id} movie={movie}/>
                         )
                     })}
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
