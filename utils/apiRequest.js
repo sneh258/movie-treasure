@@ -29,11 +29,6 @@ export const getSimilarMovies = async (id) => {
 export const getFavouriteMovies = async (id) => {
   const res = await fetch(`${BASE_URL}/account/${ID}/favorite?api_key=${API_KEY}`, {
     method: 'POST',
-    // headers: {
-    //   accept: 'application/json',
-    //   'content-type': 'application/json',
-    //   Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZTc4OGU3OGEzNDgzNGM4MTlmYzU2ZDUxZTE4YWFhNSIsInN1YiI6IjY0ZThhNGNkMWZlYWMxMDBjNDZlNTRkNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GOPy45d7rDaWjJvf-noN0gNNSti9CWXV8b2fwqWSWMY'
-    // },
   });
   const data = await res.json();
   return data.results;
