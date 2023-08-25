@@ -22,14 +22,14 @@ async function MovieDetailsPage({ params }) {
                         <p className="py-1 px-2 bg-warning text-white me-2 rounded">{movieDetails.status}</p>
                     </div>
                     <div>
-                        <p>{movieDetails.genres.map(genre => {
+                        {/* <p>{movieDetails.genres.map(genre => {
                             return <span className="mx-1 p-1 bg-dark text-white me-2 rounded" key={genre.id}>{genre.name}</span>
-                        })}</p>
+                        })}</p> */}
                     </div>
                     <p>{movieDetails.overview}</p>
                 </div>
             </div>
-            Similar Movies
+            {/* Similar Movies
             <div className="my-3">
                 <h2>Similar Movies</h2>
                 <div className="d-flex flex-wrap gap-3">
@@ -39,7 +39,7 @@ async function MovieDetailsPage({ params }) {
                         )
                     })}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
