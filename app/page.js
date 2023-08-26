@@ -7,9 +7,10 @@ export default async function Home() {
   console.log(movies);
   return (
 
-    <div className=''>
-      <h1>Top trending movies</h1>
-      <div className="flex-wrap flex justify-center gap-10 h-fit w-fit">
+    <div className='m-4'>
+      <h1 className="flex justify-center pb-4">Top trending movies</h1>
+      <hr/>
+      <div className="flex-wrap flex justify-center gap-10  w-fit">
         {movies.map((movie) => {
           return <Card key={movies.id} movie={movie} />
         })}

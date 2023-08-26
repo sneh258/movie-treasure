@@ -30,7 +30,7 @@ function Header() {
     return (
         <div className='border-2 h-[50px] flex justify-between bg-slate-200'>
             <Link className='h-fit w-[180px] m-2' href='/'>Movie-Treasure</Link>
-            <Link href="movies/favourite">
+            <Link href="/movies/favourite">
                 My Favorites
             </Link>
             <div className='h-fit w-fit flex gap-3 mt-2 mr-3'>

@@ -9,37 +9,37 @@ async function MovieDetailsPage({ params }) {
     // console.log(movieDetails);
 
     return (
-        <div className="my-4 mx-3">
-            <div className="d-flex align-items-center">
-                <div className="col-3">
-                    <img src={IMAGE_BASE_URL + movieDetails.backdrop_path} alt="" />
+        <div className="">
+            <div className="flex align-center ">
+                <div className="border-2 border-black-300 shadow-slate-400 mt-2 w-[350px] h-[350px]">
+                    <img src={IMAGE_BASE_URL + movieDetails.backdrop_path} alt="" className='w-[350px] h-[350px]'/>
                 </div>
-                <div className="mx-5">
-                    <h3>{movieDetails.title}</h3>
-                    <div className="d-flex">
-                        <p className="py-1 px-2 bg-warning text-white me-2 rounded">{movieDetails.release_date}</p>
-                        <p className="py-1 px-2 bg-warning text-white me-2 rounded">{movieDetails.original_language}</p>
-                        <p className="py-1 px-2 bg-warning text-white me-2 rounded">{movieDetails.status}</p>
+                <div className="ml-8">
+                    <h3 className='mt-8 h-fit w-fit border-2 border-black-300 bg-black text-white p-2'>{movieDetails.title}</h3>
+                    <div className="flex">
+                        <p className="h-fit w-fit border-2 border-black-300 bg-black text-white p-1">{movieDetails.release_date}</p>
+                        <p className="h-fit w-fit border-2 border-black-300 bg-black text-white p-1">{movieDetails.original_language}</p>
+                        <p className="h-fit w-fit border-2 border-black-300 bg-black text-white p-1">{movieDetails.status}</p>
                     </div>
-                    <div>
-                        {/* <p>{movieDetails.genres.map(genre => {
-                            return <span className="mx-1 p-1 bg-dark text-white me-2 rounded" key={genre.id}>{genre.name}</span>
-                        })}</p> */}
+                    <div className='mt-4'>
+                        <p>{movieDetails?.genres?.map(genre => {
+                            return <span className="h-fit w-fit border-2 border-black-300 bg-yellow-500 text-white p-1" key={genre.id}>{genre.name}</span>
+                        })}</p>
                     </div>
-                    <p>{movieDetails.overview}</p>
+                    <p className='mt-4'>{movieDetails.overview}</p>
                 </div>
             </div>
-            {/* Similar Movies
-            <div className="my-3">
-                <h2>Similar Movies</h2>
-                <div className="d-flex flex-wrap gap-3">
-                    {similarMovies.map(movie => {
+            <div className="flex flex-wrap justify-center border-2 border-black-300">
+                <h2 className='pb-2 pt-4'>Similar Movies</h2>
+                <hr/>
+                <div className="flex flex-wrap gap-3 justify-center">
+                    {similarMovies?.map(movie => {
                         return (
                             <Card key={movie.id} movie={movie}/>
                         )
                     })}
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
