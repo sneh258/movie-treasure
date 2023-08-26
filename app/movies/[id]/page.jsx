@@ -10,15 +10,15 @@ async function MovieDetailsPage({ params }) {
     return (
         <div className=' bg-black text-white'>
             <div className="flex align-center ">
-                <div className="border-2 border-black-300 shadow-slate-400 mt-2 w-[350px] h-[350px]">
+                <div className="ml-2 mt-2 w-[350px] h-[350px]">
                     <img src={IMAGE_BASE_URL + movieDetails.backdrop_path} alt="" className='w-[350px] h-[350px]'/>
                 </div>
                 <div className="ml-8">
                     <h3 className='mt-8 h-fit w-fit border-2 border-black-300 bg-black text-white p-2'>{movieDetails.title}</h3>
-                    <div className="flex">
-                        <p className="h-fit w-fit border-2 border-black-300 bg-black text-white p-1">{movieDetails.release_date}</p>
-                        <p className="h-fit w-fit border-2 border-black-300 bg-black text-white p-1">{movieDetails.original_language}</p>
-                        <p className="h-fit w-fit border-2 border-black-300 bg-black text-white p-1">{movieDetails.status}</p>
+                    <div className="flex gap-2 mt-2">
+                        <p className="h-fit w-fit  bg-green-600 text-white p-1">{movieDetails.release_date}</p>
+                        <p className="h-fit w-fit  bg-green-600 text-white p-1">{movieDetails.original_language}</p>
+                        <p className="h-fit w-fit  bg-green-600 text-white p-1">{movieDetails.status}</p>
                     </div>
                     <div className='mt-4'>
                         <p>{movieDetails?.genres?.map(genre => {

@@ -29,7 +29,7 @@ function Myfav() {
     }, []);
 
     return (
-        <div className="flex-col flex-wrap justify-center text-white bg-black text-white'">
+        <div className="flex-col flex-wrap justify-center text-white bg-black text-white' h-screen ">
            <hr/>
             <h1 className="flex justify-center pt-4">Your Favorite Movies</h1>
             <div className="pt-6 flex flex-wrap gap-10 justify-center">
