@@ -6,10 +6,9 @@ async function MovieDetailsPage({ params }) {
     const IMAGE_BASE_URL = "https://www.themoviedb.org/t/p/w220_and_h330_face";
     const movieDetails = await getMovieDetails(params.id);
     const similarMovies = await getSimilarMovies(params.id);
-    // console.log(movieDetails);
 
     return (
-        <div className="">
+        <div className=' bg-black text-white'>
             <div className="flex align-center ">
                 <div className="border-2 border-black-300 shadow-slate-400 mt-2 w-[350px] h-[350px]">
                     <img src={IMAGE_BASE_URL + movieDetails.backdrop_path} alt="" className='w-[350px] h-[350px]'/>
@@ -29,9 +28,11 @@ async function MovieDetailsPage({ params }) {
                     <p className='mt-4'>{movieDetails.overview}</p>
                 </div>
             </div>
-            <div className="flex flex-wrap justify-center border-2 border-black-300">
+         
+            <div className="flex flex-wrap justify-center">
                 <h2 className='pb-2 pt-4'>Similar Movies</h2>
                 <hr/>
+                <br/><br/>
                 <div className="flex flex-wrap gap-3 justify-center">
                     {similarMovies?.map(movie => {
                         return (

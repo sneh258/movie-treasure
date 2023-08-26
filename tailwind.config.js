@@ -14,7 +14,8 @@ module.exports = {
       },
       fontFamily: {
         'poiret': ['Poiret One', 'cursive'],
-        'Julius': ['Julius Sans One', 'sans-serif']
+        'Julius': ['Julius Sans One', 'sans-serif'],
+        'times': ['Times New Roman', 'serif'],
       }
     },
   },

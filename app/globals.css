@@ -1,12 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Julius+Sans+One&display=swap');
 
 .line-clamp {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    /* text-overflow: ellipsis; */
     -webkit-line-clamp: 2;
     max-height: calc(var(--line-height) * 2);
 }

@@ -18,15 +18,18 @@ function Card({ movie }) {
         const updatedFavorites = favorites.includes(movie.id)
             ? favorites.filter(id => id !== movie.id)
             : [...favorites, movie.id];
+        
         setFavorites(updatedFavorites);
         localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+        window.location.reload();
     };
+    
 
     
     const IMAGE_BASE_URL = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
     return (
         <div>
-            <div className='border-2 border-black-300 w-[250px] h-[450px] shadow-slate-400 mt-2'>
+            <div className='w-[250px] h-[450px] mt-2 rounded-lg'>
                 <Link className="text-decoration-none" href={"/movies/" + movie.id}>
                     <img src={IMAGE_BASE_URL + movie.poster_path} alt="" className="w-[250px] h-[300px]" />
                 </Link>
@@ -34,7 +37,7 @@ function Card({ movie }) {
                     <div className="flex justify-between">
                         <h5 className='text-lg pt-4 pl-2'><b>{movie.title}</b></h5>
                         <div
-                            className={`flex items-center border-2 border-black-300 mr-2 pt-4 ${
+                            className={`flex items-center mr-2 pt-4 ${
                                 favorites.includes(movie.id) ? 'text-red-500' : 'cursor-pointer'
                             }`}
                             onClick={toggleFavorite}
