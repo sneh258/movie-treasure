@@ -29,8 +29,8 @@ function Card({ movie, reload=null}) {
 
     const IMAGE_BASE_URL = 'https://www.themoviedb.org/t/p/w220_and_h330_face'
     return (
-        <div>
-            <div className='w-[250px] h-[450px] mt-2 rounded-lg'>
+        <div className="crd">
+            <div className='card w-[250px] h-[450px] mt-2'>
                 <Link className="text-decoration-none" href={"/movies/" + movie.id}>
                     {movie.poster_path !== null ?
                         <img src={IMAGE_BASE_URL + movie.poster_path} alt="my movie image" className="w-[250px] h-[300px]" /> :
@@ -38,7 +38,7 @@ function Card({ movie, reload=null}) {
                 </Link>
                 <div className="card-body">
                     <div className="flex justify-between">
-                        <h5 className='text-lg pt-4 pl-2'><b>{movie.title}</b></h5>
+                        <h5 className='line-clamp-2 text-lg pt-4 pl-2'><b>{movie.title}</b></h5>
                         <div
                             className={`flex items-center mr-2 pt-4 ${favorites.includes(movie.id) ? 'text-red-500' : 'cursor-pointer'
                                 }`}

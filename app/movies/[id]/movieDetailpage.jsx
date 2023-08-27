@@ -9,7 +9,7 @@ async function MovieDetailsPage({ params }) {
     return (
         <div className=' bg-black text-white min-h-[92vh]'>
             <div className="flex align-center ">
-                <div className="ml-2 mt-2 w-[350px] h-[350px]">
+                <div className="ml-3 mt-2 min-w-[250px] min-h-[250px]">
                     <img src={IMAGE_BASE_URL + movieDetails.backdrop_path} alt="" className='w-[350px] h-[350px]'/>
                 </div>
                 <div className="ml-8">
@@ -24,7 +24,7 @@ async function MovieDetailsPage({ params }) {
                             return <span className="h-fit w-fit flex-col gap-1 bg-yellow-500 text-white p-1 ml-1" key={genre.id}>{genre.name}</span>
                         })}</p>
                     </div>
-                    <p className='mt-4'>{movieDetails.overview}</p>
+                    <p className='mt-4 font-sans text-[#808080]'>{movieDetails.overview}</p>
                 </div>
             </div>
          

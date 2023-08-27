@@ -30,7 +30,7 @@ function Header() {
     }, [searchText]);
 
     return (
-        <div className='h-fit w-screen flex justify-between bg-black text-white font-times'>
+        <div className='h-fit w-screen flex justify-between bg-black text-white font-sans'>
             <Link className='h-fit w-[180px] m-4' href='/'>Movie-Treasure</Link>
             <Link href="/movies/favourite" className='flex justify-center gap-3 mt-2 pr-4'>
                 <div className='mt-2'>My Favorites</div>

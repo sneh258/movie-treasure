@@ -10,4 +10,14 @@
     overflow: hidden;
     -webkit-line-clamp: 2;
     max-height: calc(var(--line-height) * 2);
+    color: rgb(128, 128, 128);
 }
+.line-clamp-2{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    max-height: calc(var(--line-height) * 2);
+    color: rgb(205, 207, 209);
+}
+
