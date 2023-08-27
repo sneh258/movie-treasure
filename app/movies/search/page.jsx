@@ -1,15 +1,13 @@
-import Card from '@/app/components/Card';
-import SearchResults from '@/app/components/SearchResults';
-import { getMovies } from '@/utils/apiRequest';
-import React from 'react'
+import SearchPage from "./searchPage";
+import { FavProvider } from "@/app/context/favContext";
 
-async function SearchPage({searchParams}) {
-  const searchText = searchParams.query;
-  const movies = await getMovies(searchText);
+function index({searchParams}) {
+    return (
+        <div>
+            <FavProvider><SearchPage searchParams={searchParams}/></FavProvider>
+        </div>
 
-  return (
-    <SearchResults searchText={searchText} movies={movies}></SearchResults>
-  )
+    )
 }
 
-export default SearchPage;
+export default index;

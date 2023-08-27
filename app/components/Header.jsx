@@ -1,22 +1,23 @@
 "use client"
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter,usePathname} from 'next/navigation';
 import { GoSearch } from 'react-icons/go';
-import {MdFavorite} from 'react-icons/md'
+import { MdFavorite } from 'react-icons/md'
 
 function Header() {
     const [searchText, setSearchText] = useState("");
     const router = useRouter();
     const [typingTimer, setTypingTimer] = useState(null);
-
-
+    const currentPath = usePathname();
+    
     const handleSearch = () => {
         if (searchText) {
             router.push(`/movies/search?query=${searchText}`);
         }
     };
 
+    console.log(currentPath);
 
     useEffect(() => {
         if (typingTimer) {
@@ -29,13 +30,13 @@ function Header() {
     }, [searchText]);
 
     return (
-        <div className='h-[55px] flex justify-between bg-black text-white font-times'>
+        <div className='h-fit w-screen flex justify-between bg-black text-white font-times'>
             <Link className='h-fit w-[180px] m-4' href='/'>Movie-Treasure</Link>
-            <Link href="/movies/favourite" className='flex justify-center gap-3 mt-2'>
+            <Link href="/movies/favourite" className='flex justify-center gap-3 mt-2 pr-4'>
                 <div className='mt-2'>My Favorites</div>
-                <div className='mt-3'><MdFavorite/></div>
+                <div className='mt-3'><MdFavorite /></div>
             </Link>
-            <div className='h-fit w-fit flex gap-3 mt-2 mr-3'>
+            <div className={`h-fit w-fit flex gap-3 mt-2 mr-3 ${currentPath==='/movies/favourite' ? 'hidden' : 'block'}`}>
                 <div className='mt-2'><GoSearch size={24} /></div>
                 <form role="search">
                     <input
