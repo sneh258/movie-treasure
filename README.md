@@ -21,6 +21,7 @@ git clone git@github.com:sneh258/movie-treasure.git
 4. Create a .env.local file in the root directory and add the API key for the movie API:
 
 NEXT_PUBLIC_API_KEY= your_api_key
+
 NEXT_PUBLIC_BASE_URL=https://api.themoviedb.org/3
 
 5. Start the development server : npm run dev
